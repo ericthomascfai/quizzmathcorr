@@ -9,8 +9,10 @@ int main() {
     int nombre1=0,nombre2=0;
     int operateur=0;
     int resultat=0;
-    int resultatf1=0;
-    int resultatf2=0;
+    int rep=0;
+    int choix=0;
+
+    int place=0;
     srand(time(NULL));
     printf("A Combien de questions voulez-vous répondre?\n");
     scanf("%d",&nbquestions);
@@ -38,9 +40,30 @@ int main() {
                 resultat=nombre1*nombre2;
             }
             /**********************Génération des réponses possibles****************/
+            place=rand()%3;
+            for(int i=0;i<3;i++)
+            {
+                if(i==place)
+                {
+                    rep=resultat;
+                }
+                else
+                rep=(rand()%100)+1;
+                printf("%d\n",rep);
+            }
+            scanf("%d",&choix);
+            if(resultat==choix)
+            {
+                printf("Bien joué!!!!!!!!!!!\n");
+            }
+            else
+            {
+                printf("Raté le résultat était %d",resultat);
+            }
 
 
-            printf("%d\n",resultat);
+
+
     }
 
     return 0;
