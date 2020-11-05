@@ -35,7 +35,11 @@ int main() {
             else
             {
                 printf("%d*%d\n",nombre1,nombre2);
+                resultat=nombre1*nombre2;
             }
+            /**********************Génération des réponses possibles****************/
+
+
             printf("%d\n",resultat);
     }
 
