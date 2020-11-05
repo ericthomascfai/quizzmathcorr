@@ -11,7 +11,8 @@ int main() {
     int resultat=0;
     int rep=0;
     int choix=0;
-
+    int breponse=0;
+    int mreponse=0;
     int place=0;
     srand(time(NULL));
     printf("A Combien de questions voulez-vous répondre?\n");
@@ -47,24 +48,30 @@ int main() {
                 {
                     rep=resultat;
                 }
-                else
-                rep=(rand()%100)+1;
-                printf("%d\n",rep);
+                else {
+                    if (operateur == 2)
+                        rep = (rand() % 10000 + 1);
+                    else
+                        rep = (rand() % 100) + 1;
+
+                }
+                printf("%d\n", rep);
             }
             scanf("%d",&choix);
             if(resultat==choix)
             {
                 printf("Bien joué!!!!!!!!!!!\n");
+                breponse++;
             }
             else
             {
                 printf("Raté le résultat était %d",resultat);
+                mreponse++;
             }
 
-
-
-
     }
+    /*****************************statistiques de fin*******************************/
+    printf("Vous avez bien répondu a %d questions et perdu à %d questions ",breponse,mreponse);
 
     return 0;
 }
